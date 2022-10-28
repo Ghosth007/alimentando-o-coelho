@@ -1,0 +1,44 @@
+FUNÇÃO LINK
+
+constructor(bodyA, bodyB){
+        var lastlink = bodyA.body.bodies.length-2;
+        this.link = Constraint.create({
+            bodyA:bodyA.body.bodies[lastlink],
+            pointA:{x:0,y:0},
+            bodyB:bodyB,
+            pointB:{x:0,y:0},
+            length: -10,
+            stiffness: 0.01
+        });
+        World.add(engine.world,this.link)
+
+    }
+
+
+
+
+
+
+ABAIXO DO SETUP
+
+
+function setup() 
+{
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if(isMobile){
+    canW = displayWidth; 
+    canH = displayHeight; 
+    createCanvas(displayWidth+80, displayHeight);
+  } 
+  else {
+    canW = windowWidth; 
+    canH = windowHeight; 
+    createCanvas(windowWidth, windowHeight);
+  }
+
+
+----/
+INDEX ( ABAIXO DE LINK)
+
+
+<meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=0.825,minimum-scale=0.8,width=device-width">
