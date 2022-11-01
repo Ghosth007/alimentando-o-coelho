@@ -13,6 +13,6 @@ class Link{
     }
 
     detach(){
-        World.romove(engine, this.link)
+        World.remove(engine.world, this.link)
     }
 }
